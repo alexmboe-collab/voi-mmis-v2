@@ -1,7 +1,7 @@
 <?php
 /**
  * ==========================================================
- * Municipality of Voi Management Information System (Voi-MMIS)
+ * The Municipality of Voi Management Information System (Voi-MMIS)
  * Database Connection
  * ==========================================================
  */

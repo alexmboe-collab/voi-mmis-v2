@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# MAMP
+*.log
+
+# IDE
+.vscode/
+
+# Dependencies
+vendor/
+
+# Environment
+.env
+
+# Database backups
+*.sql.bak
+
+# Temporary files
+*.tmp
+
+# Cache
+.cache/
+
+# Node modules (if used later)
+node_modules/

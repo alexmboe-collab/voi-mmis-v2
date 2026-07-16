@@ -17,7 +17,7 @@
 // APPLICATION INFORMATION
 // ----------------------------------------------------------
 
-define('APP_NAME', 'Municipality of Voi Management Information System');
+define('APP_NAME', 'The Municipality of Voi Management Information System');
 
 define('APP_SHORT_NAME', 'Voi-MMIS');
 
@@ -30,7 +30,7 @@ define('DEVELOPER', 'Mboe Alex Mwashamba');
 // MUNICIPALITY INFORMATION
 // ----------------------------------------------------------
 
-define('MUNICIPALITY_NAME', 'Municipality of Voi');
+define('MUNICIPALITY_NAME', 'The Municipality of Voi');
 
 define('COUNTY_NAME', 'County Government of Taita Taveta');
 

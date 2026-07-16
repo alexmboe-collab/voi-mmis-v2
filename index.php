@@ -3,19 +3,70 @@
 require_once 'config/config.php';
 require_once 'config/database.php';
 require_once 'includes/functions.php';
+require_once 'includes/session.php';
 
-echo "<h1>" . APP_NAME . "</h1>";
+if (!isset($_SESSION['visits'])) {
 
-echo "<hr>";
+    $_SESSION['visits'] = 1;
 
-echo "<h2>Helper Function Tests</h2>";
+} else {
 
-echo "<p><strong>Tracking Number:</strong> " . generateTrackingNumber() . "</p>";
+    $_SESSION['visits']++;
 
-echo "<p><strong>Token:</strong> " . generateToken(16) . "</p>";
+}
 
-echo "<p><strong>Formatted Date:</strong> " . formatDate(date('Y-m-d H:i:s')) . "</p>";
+?>
 
-echo "<p><strong>File Size:</strong> " . formatBytes(10485760) . "</p>";
+<!DOCTYPE html>
 
-echo "<p><strong>Escaped HTML:</strong> " . e("<script>alert('Hack');</script>") . "</p>";
+<html>
+
+<head>
+
+<title>Session Test</title>
+
+</head>
+
+<body>
+
+<h1><?= APP_NAME ?></h1>
+
+<hr>
+
+<h2>Session Working Successfully</h2>
+
+<p>
+
+Session Name:
+
+<strong><?= session_name(); ?></strong>
+
+</p>
+
+<p>
+
+Session ID:
+
+<strong><?= session_id(); ?></strong>
+
+</p>
+
+<p>
+
+Visits:
+
+<strong><?= $_SESSION['visits']; ?></strong>
+
+</p>
+
+<p>
+
+Current Time:
+
+<strong><?= date('d M Y H:i:s'); ?></strong>
+
+</p>
+
+</body>
+
+</html>

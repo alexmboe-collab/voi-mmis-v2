@@ -1,4 +1,8 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 /**
  * ==========================================================
  * The Municipality of Voi Management Information System (Voi-MMIS)
@@ -56,7 +60,7 @@ date_default_timezone_set('Africa/Nairobi');
 // BASE URL
 // ----------------------------------------------------------
 
-define('BASE_URL', 'http://localhost/voi-mmis/');
+define('BASE_URL', 'http://localhost:8888/voi-mmis/');
 
 
 // ----------------------------------------------------------

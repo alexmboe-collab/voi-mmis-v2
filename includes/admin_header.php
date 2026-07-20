@@ -43,28 +43,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <header class="topbar">
 
-    <div class="logo-section">
+    <div class="topbar-left">
 
-        <img src="<?= BASE_URL ?>assets/images/county-logo.png">
+        <img src="<?= BASE_URL ?>assets/images/county-logo.png"
+             alt="County Logo"
+             class="logo">
+
+        <div class="system-name">
+
+            <h3>COUNTY GOVERNMENT OF TAITA TAVETA</h3>
+
+            <h1>THE MUNICIPALITY OF VOI</h1>
+
+            <small>Municipal Management Information System (Voi-MMIS)</small>
+
+        </div>
 
     </div>
 
-    <div class="system-title">
+    <div class="topbar-right">
 
-        <h2>COUNTY GOVERNMENT OF TAITA TAVETA</h2>
+        <span>
 
-        <h1>THE MUNICIPALITY OF VOI</h1>
+            <i class="fas fa-user-circle"></i>
 
-        <p>Municipal Management Information System (Voi-MMIS)</p>
+            <?= e($_SESSION['full_name']); ?>
 
-    </div>
+        </span>
 
-    <div class="user-section">
-
-        <img src="<?= BASE_URL ?>assets/images/municipality-logo.png">
+        <img src="<?= BASE_URL ?>assets/images/municipality-logo.png"
+             alt="Municipality Logo"
+             class="logo">
 
     </div>
 
 </header>
+
+<div class="body-wrapper">
 
 <div class="body-wrapper">

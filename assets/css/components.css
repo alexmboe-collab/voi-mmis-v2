@@ -1,0 +1,25 @@
+.btn{
+
+display:inline-block;
+
+padding:12px 20px;
+
+background:var(--primary);
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+margin:10px 10px 0 0;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:var(--primary-dark);
+
+}

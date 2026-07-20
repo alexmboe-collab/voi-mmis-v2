@@ -4,7 +4,9 @@ require_once '../includes/bootstrap.php';
 
 requireLogin();
 
+require_once '../modules/users/model.php';
 
+$userModel = new UserModel($pdo);
 
 $pageTitle = "Dashboard";
 
@@ -18,77 +20,104 @@ require_once '../includes/admin_sidebar.php';
 
 ?>
 
-<div class="page-header">
+<!-- ==========================================================
+     Dashboard Content
+========================================================== -->
 
-<h2>Dashboard</h2>
+<div class="content-wrapper">
 
-<p>Welcome back,
-<strong><?= e($_SESSION['full_name']); ?></strong>
+    <!-- Page Header -->
 
-</p>
+  <div class="page-title">
+
+    <div>
+
+        <h2>Dashboard</h2>
+
+        <p class="page-subtitle">
+
+            Municipal Management Information System
+
+        </p>
+
+        <p>
+
+            Welcome back,
+
+            <strong><?= e($_SESSION['full_name']) ?></strong>
+
+        </p>
+
+    </div>
+
+        <div>
+
+            <span class="badge badge-success">
+
+                <?= date('l, d F Y') ?>
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+    <div class="dashboard-card card-users">
+
+        <div>
+
+            <h3>Total Users</h3>
+
+            <h1><?= $userModel->count(); ?></h1>
+
+        </div>
+
+        <i class="fas fa-users dashboard-icon"></i>
+
+    </div>
+
+    <div class="dashboard-card card-projects">
+
+        <div>
+
+            <h3>Projects</h3>
+
+            <h1>0</h1>
+
+        </div>
+
+        <i class="fas fa-road dashboard-icon"></i>
+
+    </div>
+
+    <div class="dashboard-card card-complaints">
+
+        <div>
+
+            <h3>Complaints</h3>
+
+            <h1>0</h1>
+
+        </div>
+
+        <i class="fas fa-comments dashboard-icon"></i>
+
+    </div>
+
+    <div class="dashboard-card card-documents">
+
+        <div>
+
+            <h3>Documents</h3>
+
+            <h1>0</h1>
+
+        </div>
+
+        <i class="fas fa-folder dashboard-icon"></i>
+
+    </div>
 
 </div>
-
-<div class="dashboard-grid">
-
-<div class="dashboard-card">
-
-<h3>Users</h3>
-
-<h1><?= $stats['users']; ?></h1>
-
-<p>Registered Users</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h3>Projects</h3>
-
-<h1>0</h1>
-
-<p>Municipal Projects</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h3>News</h3>
-
-<h1>0</h1>
-
-<p>Published News</p>
-
-</div>
-
-<div class="dashboard-card">
-
-<h3>Complaints</h3>
-
-<h1>0</h1>
-
-<p>Citizen Complaints</p>
-
-</div>
-
-</div>
-
-<div class="quick-actions">
-
-<h3>Quick Actions</h3>
-
-<a href="#" class="btn">Create Project</a>
-
-<a href="#" class="btn">Publish News</a>
-
-<a href="#" class="btn">Register User</a>
-
-<a href="#" class="btn">Generate Report</a>
-
-</div>
-
-<?php
-
-require_once '../includes/admin_footer.php';
-
-?>

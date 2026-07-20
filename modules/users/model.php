@@ -90,34 +90,44 @@ class UserModel extends BaseModel
 
     /**
     * Check whether a username already exists
+    * (optionally excluding a given user id, e.g. when editing)
     */
-    public function usernameExists(string $username): bool
+    public function usernameExists(string $username, ?int $excludeId = null): bool
     {
-        $user = $this->selectOne(
-            "SELECT id
-            FROM users
-            WHERE username = :username",
-            [
-                ':username' => $username
-            ]
-        );
+        $sql = "SELECT id
+                FROM users
+                WHERE username = :username";
+
+        $params = [':username' => $username];
+
+        if ($excludeId !== null) {
+            $sql .= " AND id != :exclude_id";
+            $params[':exclude_id'] = $excludeId;
+        }
+
+        $user = $this->selectOne($sql, $params);
 
         return $user !== null;
     }
 
     /**
     * Check whether an email already exists
+    * (optionally excluding a given user id, e.g. when editing)
     */
-    public function emailExists(string $email): bool
+    public function emailExists(string $email, ?int $excludeId = null): bool
     {
-        $user = $this->selectOne(
-            "SELECT id
-            FROM users
-            WHERE email = :email",
-            [
-                ':email' => $email
-            ]
-        );
+        $sql = "SELECT id
+                FROM users
+                WHERE email = :email";
+
+        $params = [':email' => $email];
+
+        if ($excludeId !== null) {
+            $sql .= " AND id != :exclude_id";
+            $params[':exclude_id'] = $excludeId;
+        }
+
+        $user = $this->selectOne($sql, $params);
 
         return $user !== null;
     }
@@ -165,6 +175,34 @@ class UserModel extends BaseModel
 
              ':status' => $data['status']
 
+            ]
+
+        );
+    }
+
+    /**
+    * Update Existing User
+    */
+    public function update(int $id, array $data): bool
+    {
+        return $this->execute(
+
+            "UPDATE users
+             SET
+                full_name = :full_name,
+                username = :username,
+                email = :email,
+                role = :role,
+                status = :status
+             WHERE id = :id",
+
+            [
+                ':full_name' => $data['full_name'],
+                ':username' => $data['username'],
+                ':email' => $data['email'],
+                ':role' => $data['role'],
+                ':status' => $data['status'],
+                ':id' => $id
             ]
 
         );

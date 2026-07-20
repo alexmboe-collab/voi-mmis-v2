@@ -254,3 +254,8 @@ box-shadow:var(--shadow);
 
 }
 
+@import url('variables.css');
+@import url('components.css');
+@import url('login.css');
+@import url('dashboard.css');
+@import url('responsive.css');

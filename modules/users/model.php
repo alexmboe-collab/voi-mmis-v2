@@ -87,4 +87,86 @@ class UserModel extends BaseModel
             ]
         );
     }
+
+    /**
+    * Check whether a username already exists
+    */
+    public function usernameExists(string $username): bool
+    {
+        $user = $this->selectOne(
+            "SELECT id
+            FROM users
+            WHERE username = :username",
+            [
+                ':username' => $username
+            ]
+        );
+
+        return $user !== null;
+    }
+
+    /**
+    * Check whether an email already exists
+    */
+    public function emailExists(string $email): bool
+    {
+        $user = $this->selectOne(
+            "SELECT id
+            FROM users
+            WHERE email = :email",
+            [
+                ':email' => $email
+            ]
+        );
+
+        return $user !== null;
+    }
+
+    /**
+    * Create New User
+    */
+    public function create(array $data): bool
+    {
+        return $this->execute(
+
+            "INSERT INTO users
+            (
+                full_name,
+                username,
+               email,
+               password,
+               role,
+                status
+         )
+
+            VALUES
+         (
+                :full_name,
+                :username,
+                :email,
+                :password,
+                :role,
+                :status
+             )",
+         [
+
+                ':full_name' => $data['full_name'],
+
+                ':username' => $data['username'],
+
+                ':email' => $data['email'],
+
+                ':password' => password_hash(
+                 $data['password'],
+                 PASSWORD_DEFAULT
+             ),
+
+             ':role' => $data['role'],
+
+             ':status' => $data['status']
+
+            ]
+
+        );
+    }
 }

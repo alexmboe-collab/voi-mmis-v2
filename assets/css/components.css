@@ -184,3 +184,26 @@ font-size:15px;
     width:100%;
     overflow-x:auto;
 }
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:6px;
+}

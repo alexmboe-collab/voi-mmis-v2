@@ -1,41 +1,31 @@
 <?php
 
-require_once '../config/config.php';
-require_once '../config/database.php';
-require_once '../includes/functions.php';
-require_once '../includes/session.php';
-require_once '../includes/auth.php';
+require_once '../includes/bootstrap.php';
 
 requireLogin();
 
 $pageTitle = "Dashboard";
 
 require_once '../includes/admin_header.php';
-require_once '../includes/admin_topbar.php';
+
+require_once '../includes/admin_sidebar.php';
+
 ?>
 
-<div class="content">
+<h2>Dashboard</h2>
 
-    <div style="padding:40px;">
+<p>Welcome back, <strong><?= e($_SESSION['full_name']) ?></strong>.</p>
 
-        <h1>Welcome to <?= APP_NAME; ?></h1>
+<div class="card">
 
-        <hr><br>
+<h3>System Status</h3>
 
-        <h2>Hello, <?= e($_SESSION['full_name']); ?></h2>
+<p>Voi-MMIS Version <?= APP_VERSION ?></p>
 
-        <p><strong>Username:</strong> <?= e($_SESSION['username']); ?></p>
-
-        <p><strong>Role:</strong> <?= e($_SESSION['role']); ?></p>
-
-        <p><strong>Login Time:</strong> <?= date('d M Y H:i', $_SESSION['login_time']); ?></p>
-
-        <br>
-
-        <a href="logout.php">Logout</a>
-
-    </div>
+<p>Logged in as <?= e($_SESSION['role']) ?></p>
 
 </div>
 
-<?php require_once '../includes/admin_footer.php'; ?>
+<?php
+
+require_once '../includes/admin_footer.php';

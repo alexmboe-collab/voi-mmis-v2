@@ -1,0 +1,53 @@
+/* ==========================================================
+   Voi-MMIS Design Variables
+   Developer : Mboe Alex Mwashamba
+   Version   : 2.0.0
+========================================================== */
+
+:root{
+
+    /* Municipality Colours */
+
+    --primary:#005BAA;
+    --primary-dark:#003B73;
+
+    --secondary:#00843D;
+
+    --accent:#F4B400;
+
+    /* Status Colours */
+
+    --success:#198754;
+    --danger:#DC3545;
+    --warning:#FFC107;
+    --info:#0DCAF0;
+
+    /* Neutral Colours */
+
+    --white:#FFFFFF;
+    --light:#F8F9FA;
+    --gray:#6C757D;
+    --dark:#1E293B;
+    --border:#DEE2E6;
+
+    /* Typography */
+
+    --font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+
+    /* Shadows */
+
+    --shadow:0 4px 12px rgba(0,0,0,.08);
+
+    /* Radius */
+
+    --radius:10px;
+
+    /* Sidebar */
+
+    --sidebar-width:260px;
+
+    /* Header */
+
+    --header-height:90px;
+
+}

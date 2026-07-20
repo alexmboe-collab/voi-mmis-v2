@@ -1,0 +1,49 @@
+/* ==========================================================
+   Voi-MMIS Main Layout
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:var(--font-family);
+
+    background:var(--light);
+
+    color:#333;
+
+}
+
+.wrapper{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.topbar{
+
+    height:var(--header-height);
+
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:15px 30px;
+
+    border-bottom:5px solid var(--accent);
+
+}

@@ -152,3 +152,35 @@
     background:var(--danger);
 
 }
+
+/* SEARCH FORM */
+
+.search-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr auto;
+
+gap:15px;
+
+align-items:end;
+
+}
+
+.search-grid input,
+.search-grid select{
+
+padding:12px;
+
+border:1px solid var(--border);
+
+border-radius:8px;
+
+font-size:15px;
+
+}
+
+.table-responsive{
+    width:100%;
+    overflow-x:auto;
+}

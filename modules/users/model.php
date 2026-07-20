@@ -19,16 +19,53 @@ class UserModel
     }
 
     /**
-     * Get all users
-     */
-    public function getAll(): array
-    {
-        $sql = "SELECT *
-                FROM users
-                ORDER BY full_name ASC";
+ * Get Users with Search & Filters
+ */
+public function getAll(
+    string $search = '',
+    string $role = '',
+    string $status = ''
+): array {
 
-        return $this->pdo->query($sql)->fetchAll();
+    $sql = "SELECT *
+            FROM users
+            WHERE 1=1";
+
+    $params = [];
+
+    if (!empty($search)) {
+
+        $sql .= " AND (
+                    full_name LIKE :search
+                    OR username LIKE :search
+                  )";
+
+        $params[':search'] = "%{$search}%";
     }
+
+    if (!empty($role)) {
+
+        $sql .= " AND role = :role";
+
+        $params[':role'] = $role;
+    }
+
+    if (!empty($status)) {
+
+        $sql .= " AND status = :status";
+
+        $params[':status'] = $status;
+    }
+
+    $sql .= " ORDER BY full_name ASC";
+
+    $stmt = $this->pdo->prepare($sql);
+
+    $stmt->execute($params);
+
+    return $stmt->fetchAll();
+
+}
 
     /**
      * Count users

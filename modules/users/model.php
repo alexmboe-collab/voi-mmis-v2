@@ -74,6 +74,33 @@ class UserModel extends BaseModel
     }
 
     /**
+    * Get Latest Users
+    */
+    public function latest(int $limit = 5): array
+    {
+        $sql = "
+            SELECT
+                id,
+                full_name,
+                username,
+                role,
+                status,
+                created_at
+            FROM users
+            ORDER BY created_at DESC
+            LIMIT :limit
+        ";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    /**
      * Find User by ID
      */
     public function find(int $id): ?array

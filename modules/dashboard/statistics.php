@@ -1,24 +1,59 @@
-<?php
+<div class="dashboard-grid">
 
-/**
- * ==========================================================
- * Dashboard Statistics
- * ==========================================================
- */
+    <div class="dashboard-card card-users">
 
-function dashboardStats(PDO $pdo)
-{
-    $stats = [];
+        <div>
 
-    /*
-    |--------------------------------------------------------------------------
-    | USERS
-    |--------------------------------------------------------------------------
-    */
+            <h3>Total Users</h3>
 
-    $stmt = $pdo->query("SELECT COUNT(*) FROM users");
+            <h1><?= $userModel->count(); ?></h1>
 
-    $stats['users'] = (int) $stmt->fetchColumn();
+        </div>
 
-    return $stats;
-}
+        <i class="fas fa-users dashboard-icon"></i>
+
+    </div>
+
+    <div class="dashboard-card card-projects">
+
+        <div>
+
+            <h3>Projects</h3>
+
+            <h1>0</h1>
+
+        </div>
+
+        <i class="fas fa-road dashboard-icon"></i>
+
+    </div>
+
+    <div class="dashboard-card card-complaints">
+
+        <div>
+
+            <h3>Complaints</h3>
+
+            <h1>0</h1>
+
+        </div>
+
+        <i class="fas fa-comments dashboard-icon"></i>
+
+    </div>
+
+    <div class="dashboard-card card-documents">
+
+        <div>
+
+            <h3>Documents</h3>
+
+            <h1>0</h1>
+
+        </div>
+
+        <i class="fas fa-folder dashboard-icon"></i>
+
+    </div>
+
+</div>

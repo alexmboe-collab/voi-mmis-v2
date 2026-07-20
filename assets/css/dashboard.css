@@ -139,3 +139,101 @@
     border-top:6px solid #E74C3C;
 
 }
+
+/* ==========================================================
+   Quick Actions
+========================================================== */
+
+.quick-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+.quick-card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#333;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.quick-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.quick-card i{
+
+    font-size:38px;
+
+    color:#005BAA;
+
+    margin-bottom:12px;
+
+}
+
+.quick-card span{
+
+    display:block;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   Dashboard Sections
+========================================================== */
+
+.dashboard-section{
+
+    margin-top:30px;
+
+}
+
+.card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.card-header{
+
+    margin-bottom:20px;
+
+}
+
+.card-header h3{
+
+    color:var(--primary);
+
+    font-size:20px;
+
+}

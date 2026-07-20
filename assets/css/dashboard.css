@@ -281,3 +281,35 @@
     font-size:34px;
 
 }
+
+/* ==========================================================
+   Welcome Banner
+========================================================== */
+
+.welcome-card{
+
+    background:linear-gradient(135deg,#005BAA,#00843D);
+
+    color:#fff;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+}
+
+.welcome-card h2{
+
+    margin-bottom:10px;
+
+    font-size:30px;
+
+}
+
+.welcome-card p{
+
+    opacity:.95;
+
+}

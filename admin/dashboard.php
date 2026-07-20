@@ -47,6 +47,8 @@ require_once '../includes/admin_sidebar.php';
 
 <div class="content-wrapper">
 
+    <?php require '../modules/dashboard/welcome.php'; ?>
+
     <?php require '../modules/dashboard/statistics.php'; ?>
 
     <?php require '../modules/dashboard/user_analytics.php'; ?>

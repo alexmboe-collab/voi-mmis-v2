@@ -70,6 +70,64 @@ class DashboardModel extends BaseModel
     }
 
     /**
+    * Current Logged-in User
+    */
+    public function currentUser(): string
+    {
+    return $_SESSION['full_name'] ?? 'Unknown User';
+    }
+
+    /**
+    * Current User Role
+    */
+    public function currentRole(): string
+    {
+        return $_SESSION['role'] ?? 'Unknown Role';
+    }
+
+    /**
+    * PHP Version
+    */
+    public function phpVersion(): string
+    {
+        return PHP_VERSION;
+    }
+
+    /**
+    * Database Status
+    */
+    public function databaseStatus(): string
+    {
+        try {
+
+            $this->pdo->query("SELECT 1");
+
+            return "Connected";
+
+        } catch (Exception $e) {
+
+            return "Disconnected";
+
+        }
+    }
+
+    /**
+    * Server Time
+    */
+    public function serverTime(): string
+    {
+        return date('d M Y H:i:s');
+    }
+
+    /**
+    * System Version
+    */
+    public function version(): string
+    {
+        return "2.0.0";
+    }
+
+    /**
      * Total Projects
      * (Temporary until projects table exists)
      */

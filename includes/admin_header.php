@@ -80,5 +80,3 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </header>
 
 <div class="body-wrapper">
-
-<div class="body-wrapper">

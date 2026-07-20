@@ -20,6 +20,16 @@ $pageTitle = "Dashboard";
 |--------------------------------------------------------------------------
 */
 
+require_once '../modules/dashboard/model.php';
+
+$dashboard = new DashboardModel($pdo);
+
+/*
+|--------------------------------------------------------------------------
+| Load User Models
+|--------------------------------------------------------------------------
+*/
+
 require_once '../modules/users/model.php';
 
 $userModel = new UserModel($pdo);
@@ -38,6 +48,8 @@ require_once '../includes/admin_sidebar.php';
 <div class="content-wrapper">
 
     <?php require '../modules/dashboard/statistics.php'; ?>
+
+    <?php require '../modules/dashboard/user_analytics.php'; ?>
 
     <?php require '../modules/dashboard/quick_actions.php'; ?>
 

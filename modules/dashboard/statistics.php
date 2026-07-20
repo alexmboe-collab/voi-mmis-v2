@@ -6,7 +6,7 @@
 
             <h3>Total Users</h3>
 
-            <h1><?= $userModel->count(); ?></h1>
+            <h1><?= $dashboard->totalUsers(); ?></h1>
 
         </div>
 
@@ -20,7 +20,7 @@
 
             <h3>Projects</h3>
 
-            <h1>0</h1>
+            <h1><?= $dashboard->totalProjects(); ?></h1>
 
         </div>
 
@@ -34,7 +34,7 @@
 
             <h3>Complaints</h3>
 
-            <h1>0</h1>
+            <h1><?= $dashboard->totalComplaints(); ?></h1>
 
         </div>
 
@@ -48,7 +48,7 @@
 
             <h3>Documents</h3>
 
-            <h1>0</h1>
+            <h1><?= $dashboard->totalDocuments(); ?></h1>
 
         </div>
 

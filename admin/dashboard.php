@@ -4,7 +4,13 @@ require_once '../includes/bootstrap.php';
 
 requireLogin();
 
+
+
 $pageTitle = "Dashboard";
+
+require_once '../modules/dashboard/statistics.php';
+
+$stats = dashboardStats($pdo);
 
 require_once '../includes/admin_header.php';
 
@@ -29,7 +35,7 @@ require_once '../includes/admin_sidebar.php';
 
 <h3>Users</h3>
 
-<h1>1</h1>
+<h1><?= $stats['users']; ?></h1>
 
 <p>Registered Users</p>
 

@@ -107,3 +107,5 @@ if (ENVIRONMENT === 'development') {
     ini_set('display_errors', 0);
 
 }
+
+define('SYSTEM_LOADED', true);

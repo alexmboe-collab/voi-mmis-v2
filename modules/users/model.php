@@ -6,92 +6,85 @@
  * User Model
  *
  * Developer : Mboe Alex Mwashamba
+ * Version   : 2.0.0
  * ==========================================================
  */
 
-class UserModel
+require_once __DIR__ . '/../../models/BaseModel.php';
+
+class UserModel extends BaseModel
 {
-    private PDO $pdo;
+    /**
+     * Get Users with Search & Filters
+     */
+    public function getAll(
+        string $search = '',
+        string $role = '',
+        string $status = ''
+    ): array {
 
-    public function __construct(PDO $pdo)
-    {
-        $this->pdo = $pdo;
+        $sql = "SELECT *
+                FROM users
+                WHERE 1=1";
+
+        $params = [];
+
+        if (!empty($search)) {
+
+            $sql .= " AND (
+                        full_name LIKE :name
+                        OR username LIKE :username
+                        OR role LIKE :role_search
+                        OR status LIKE :status_search
+                )";
+
+            $keyword = "%{$search}%";
+
+            $params[':name'] = $keyword;
+            $params[':username'] = $keyword;
+            $params[':role_search'] = $keyword;
+            $params[':status_search'] = $keyword;
+        }
+
+        if (!empty($role)) {
+
+            $sql .= " AND role = :role";
+
+            $params[':role'] = $role;
+        }
+
+        if (!empty($status)) {
+
+            $sql .= " AND status = :status";
+
+            $params[':status'] = $status;
+        }
+
+        $sql .= " ORDER BY full_name ASC";
+
+        return $this->select($sql, $params);
     }
 
     /**
- * Get Users with Search & Filters
- */
-public function getAll(
-    string $search = '',
-    string $role = '',
-    string $status = ''
-): array {
-
-    $sql = "SELECT *
-            FROM users
-            WHERE 1=1";
-
-    $params = [];
-
-    if (!empty($search)) {
-
-        $sql .= " AND (
-                    full_name LIKE :search
-                    OR username LIKE :search
-                  )";
-
-        $params[':search'] = "%{$search}%";
-    }
-
-    if (!empty($role)) {
-
-        $sql .= " AND role = :role";
-
-        $params[':role'] = $role;
-    }
-
-    if (!empty($status)) {
-
-        $sql .= " AND status = :status";
-
-        $params[':status'] = $status;
-    }
-
-    $sql .= " ORDER BY full_name ASC";
-
-    $stmt = $this->pdo->prepare($sql);
-
-    $stmt->execute($params);
-
-    return $stmt->fetchAll();
-
-}
-
-    /**
-     * Count users
+     * Count Users
      */
     public function count(): int
     {
-        return (int) $this->pdo
-            ->query("SELECT COUNT(*) FROM users")
-            ->fetchColumn();
+        return $this->countRows('users');
     }
 
     /**
-     * Find one user
+     * Find User by ID
      */
     public function find(int $id): ?array
     {
-        $stmt = $this->pdo->prepare(
-            "SELECT * FROM users WHERE id=:id LIMIT 1"
+        return $this->selectOne(
+            "SELECT *
+             FROM users
+             WHERE id = :id",
+            [
+                ':id' => $id
+            ]
         );
-
-        $stmt->execute([
-            ':id' => $id
-        ]);
-
-        $user = $stmt->fetch();
-
-        return $user ?: null;
     }
 }

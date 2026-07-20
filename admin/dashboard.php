@@ -1,10 +1,34 @@
 <?php
 
+/**
+ * ==========================================================
+ * Dashboard
+ * The Municipality of Voi Management Information System
+ * Developer: Mboe Alex Mwashamba
+ * ==========================================================
+ */
+
 require_once '../includes/bootstrap.php';
 
 requireLogin();
 
 $pageTitle = "Dashboard";
+
+/*
+|--------------------------------------------------------------------------
+| Load Dashboard Models
+|--------------------------------------------------------------------------
+*/
+
+require_once '../modules/users/model.php';
+
+$userModel = new UserModel($pdo);
+
+/*
+|--------------------------------------------------------------------------
+| Layout
+|--------------------------------------------------------------------------
+*/
 
 require_once '../includes/admin_header.php';
 require_once '../includes/admin_sidebar.php';

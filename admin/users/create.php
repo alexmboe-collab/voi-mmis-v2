@@ -4,6 +4,8 @@ require_once '../../includes/bootstrap.php';
 
 requireLogin();
 
+requireRole(['ICT_ADMIN']);
+
 $pageTitle = "Add User";
 
 require_once '../../modules/users/model.php';

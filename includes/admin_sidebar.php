@@ -10,17 +10,21 @@ MAIN MENU
 
 <ul>
 
+<?php if (hasRole(['ICT_ADMIN'])): ?>
+
 <li>
 
-<a href="<?= BASE_URL ?>admin/users/index.php">
+    <a href="<?= BASE_URL ?>admin/users/index.php">
 
-<i class="fas fa-users"></i>
+        <i class="fas fa-users-cog"></i>
 
-Users
+        User Management
 
-</a>
+    </a>
 
 </li>
+
+<?php endif; ?>
 
 <li><a href="../admin/logout.php">
 

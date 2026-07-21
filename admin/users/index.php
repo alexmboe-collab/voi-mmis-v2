@@ -21,6 +21,8 @@ require_once '../../includes/bootstrap.php';
 
 requireLogin();
 
+requireRole(['ICT_ADMIN']);
+
 /*
 |--------------------------------------------------------------------------
 | Page Information

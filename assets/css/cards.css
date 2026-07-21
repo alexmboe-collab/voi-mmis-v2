@@ -1,0 +1,45 @@
+/* ==========================================================
+   Cards
+========================================================== */
+
+.card{
+
+    background:var(--white);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-sm);
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+}
+
+.card-header{
+
+    padding:18px 25px;
+
+    border-bottom:1px solid var(--border);
+
+    font-weight:600;
+
+    background:var(--light);
+
+}
+
+.card-body{
+
+    padding:25px;
+
+}
+
+.card-footer{
+
+    padding:18px 25px;
+
+    border-top:1px solid var(--border);
+
+    background:var(--light);
+
+}

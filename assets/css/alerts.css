@@ -1,0 +1,47 @@
+/* ==========================================================
+   Alerts
+========================================================== */
+
+.alert{
+
+    padding:15px 20px;
+
+    border-radius:var(--radius-md);
+
+    margin-bottom:20px;
+
+    font-weight:500;
+
+}
+
+.alert-success{
+
+    background:#D4EDDA;
+
+    color:#155724;
+
+}
+
+.alert-danger{
+
+    background:#F8D7DA;
+
+    color:#721C24;
+
+}
+
+.alert-warning{
+
+    background:#FFF3CD;
+
+    color:#856404;
+
+}
+
+.alert-info{
+
+    background:#D1ECF1;
+
+    color:#0C5460;
+
+}

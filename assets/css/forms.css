@@ -1,0 +1,138 @@
+/* ==========================================================
+   Forms
+========================================================== */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--text);
+}
+
+.form-control,
+.form-select,
+.form-textarea{
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-sm);
+
+    background:var(--white);
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(0,91,170,.15);
+
+}
+
+.form-textarea{
+
+    min-height:120px;
+
+    resize:vertical;
+
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:11px 20px;
+
+    border-radius:var(--radius-sm);
+
+    font-weight:600;
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.btn-primary:hover{
+
+    background:#004B8D;
+
+}
+
+.btn-success{
+
+    background:var(--secondary);
+
+    color:#fff;
+
+}
+
+.btn-success:hover{
+
+    background:#006C31;
+
+}
+
+.btn-warning{
+
+    background:var(--warning);
+
+    color:#222;
+
+}
+
+.btn-danger{
+
+    background:var(--danger);
+
+    color:#fff;
+
+}
+
+.btn-danger:hover{
+
+    background:#B22222;
+
+}

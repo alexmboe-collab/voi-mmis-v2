@@ -1,0 +1,40 @@
+/* ==========================================================
+   Page Titles
+========================================================== */
+
+.page-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.page-title h2{
+
+    font-size:30px;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   Search Grid
+========================================================== */
+
+.search-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+    align-items:end;
+
+}

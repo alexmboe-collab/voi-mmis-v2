@@ -1,42 +1,49 @@
+<?php
+/**
+ * ==========================================================
+ * Admin Sidebar
+ * ==========================================================
+ */
+?>
+
 <aside class="sidebar">
 
-<div class="sidebar-title">
+    <div class="sidebar-title">
+        MAIN MENU
+    </div>
 
-MAIN MENU
+    <nav>
 
-</div>
+        <ul>
 
-<nav>
+            <?php if (hasRole(['ICT_ADMIN'])): ?>
 
-<ul>
+                <li>
+                    <a href="<?= BASE_URL ?>admin/users/index.php">
+                        <i class="fas fa-users-cog"></i>
+                        User Management
+                    </a>
+                </li>
 
-<?php if (hasRole(['ICT_ADMIN'])): ?>
+            <?php endif; ?>
 
-<li>
+            <li>
+                <a href="<?= BASE_URL ?>admin/dashboard.php">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+            </li>
 
-    <a href="<?= BASE_URL ?>admin/users/index.php">
+            <li>
+                <a href="<?= BASE_URL ?>admin/logout.php">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
 
-        <i class="fas fa-users-cog"></i>
+        </ul>
 
-        User Management
-
-    </a>
-
-</li>
-
-<?php endif; ?>
-
-<li><a href="../admin/logout.php">
-
-<i class="fas fa-sign-out-alt"></i>
-
-Logout
-
-</a></li>
-
-</ul>
-
-</nav>
+    </nav>
 
 </aside>
 

@@ -1,0 +1,95 @@
+/* ==========================================================
+   Tables
+========================================================== */
+
+.table-responsive{
+
+    overflow-x:auto;
+
+}
+
+.table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#fff;
+
+}
+
+.table th{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:14px;
+
+    text-align:left;
+
+    font-weight:600;
+
+}
+
+.table td{
+
+    padding:14px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.table tbody tr:nth-child(even){
+
+    background:#FAFAFA;
+
+}
+
+.table tbody tr:hover{
+
+    background:#EEF6FD;
+
+}
+
+/* ==========================================================
+   Status Badges
+========================================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.badge-success{
+
+    background:#D4EDDA;
+
+    color:#155724;
+
+}
+
+.badge-danger{
+
+    background:#F8D7DA;
+
+    color:#721C24;
+
+}
+
+.badge-warning{
+
+    background:#FFF3CD;
+
+    color:#856404;
+
+}

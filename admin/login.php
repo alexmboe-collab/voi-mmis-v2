@@ -57,74 +57,160 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
 <title>Login | <?= APP_NAME ?></title>
+
+<!-- Google Fonts -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<!-- Stylesheets -->
+
 <link rel="stylesheet"
 href="<?= BASE_URL ?>assets/css/variables.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/reset.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/forms.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/alerts.css?v=<?= APP_VERSION ?>">
 
 <link rel="stylesheet"
 href="<?= BASE_URL ?>assets/css/login.css?v=<?= APP_VERSION ?>">
 
 <link rel="stylesheet"
-href="<?= BASE_URL ?>assets/css/components.css?v=<?= APP_VERSION ?>">
-
-<link rel="stylesheet"
 href="<?= BASE_URL ?>assets/css/responsive.css?v=<?= APP_VERSION ?>">
+
 </head>
+
 <body>
 
 <div class="login-container">
 
-<div class="login-card">
+    <!-- LEFT SIDE -->
 
-<div class="logo">
+    <div class="login-left">
 
-<img src="../assets/images/logo.png" alt="Municipality Logo">
+        <img
+            src="../assets/images/logo.png"
+            alt="Municipality Logo">
 
-<h2>Municipality of Voi</h2>
+        <h1>
 
-<p>Municipal Management Information System</p>
+            THE MUNICIPALITY OF VOI
 
-</div>
+        </h1>
 
-<?php if ($error): ?>
+        <p>
 
-<div class="error"><?= e($error) ?></div>
+            Municipal Management Information System
 
-<?php endif; ?>
+        </p>
 
-<form method="POST">
+    </div>
 
-<div class="form-group">
+    <!-- RIGHT SIDE -->
 
-<label>Username</label>
+    <div class="login-right">
 
-<input type="text" name="username" required>
+        <div class="login-card">
 
-</div>
+            <h2>Welcome Back</h2>
 
-<div class="form-group">
+            <p>
 
-<label>Password</label>
+                Sign in to continue to Voi-MMIS
 
-<input type="password" name="password" required>
+            </p>
 
-</div>
+            <?php if ($error): ?>
 
-<button type="submit">Login</button>
+                <div class="alert alert-danger">
 
-</form>
+                    <?= e($error) ?>
 
-<div class="footer">
+                </div>
 
-&copy; <?= date('Y') ?> Municipality of Voi
+            <?php endif; ?>
 
-</div>
+            <form method="POST">
 
-</div>
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Username
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label class="form-label">
+
+                        Password
+
+                    </label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        required>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary w-100">
+
+                    Login to Voi-MMIS
+
+                </button>
+
+            </form>
+
+            <div class="mt-2 text-center">
+
+                <small>
+
+                    &copy; <?= date('Y') ?>
+
+                    Municipality of Voi
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 </body>
+
 </html>

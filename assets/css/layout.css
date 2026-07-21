@@ -1,4 +1,121 @@
 /* ==========================================================
+   Topbar
+========================================================== */
+
+.topbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    height:110px;
+
+    background:var(--primary);
+
+    border-bottom:4px solid var(--accent);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 25px;
+
+    z-index:1000;
+}
+
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex:1;
+}
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    white-space:nowrap;
+
+    flex-shrink:0;
+}
+
+.logo{
+
+    width:90px;
+
+    height: 90px;
+
+    object-fit:contain;
+
+}
+
+.system-name h3, 
+.system-name h1, 
+.system-name small {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1; /* Tightens the spacing within multi-line text */
+}
+
+.system-name h3{
+
+    color:#FFFFFF;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    margin-bottom:2px;
+
+}
+
+.system-name h1{
+
+    color:#FFFFFF;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:2px;
+
+}
+
+.system-name small{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:rgba(255,255,255,.9);
+
+    font-size:18px;
+}
+
+.topbar-right span{
+
+    color:#FFFFFF;
+
+    font-weight:600;
+
+    font-size:18px;
+}
+
+/* ==========================================================
    Page Titles
 ========================================================== */
 
@@ -37,4 +154,133 @@
 
     align-items:end;
 
+}
+
+/*=========================================================
+  Wrapper
+=========================================================*/
+
+.wrapper{
+
+    min-height:100vh;
+
+}
+
+.body-wrapper{
+
+    display:flex;
+}
+
+/*=========================================================
+  Sidebar
+=========================================================*/
+
+.sidebar{
+
+    position:fixed;
+
+    top:110px;
+
+    left:0;
+
+    width:240px;
+
+    height:calc(100vh - 150px);
+
+    overflow-y:auto;
+
+    background:#1E293B;
+
+}
+
+.sidebar-title{
+
+    padding:0 25px 20px;
+
+    color:#CBD5E1;
+
+    font-size:18px;
+
+    font-weight: 600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.sidebar ul{
+
+    list-style:none;
+}
+
+.sidebar li{
+
+    margin-bottom:5px;
+}
+
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px 25px;
+
+    color:white;
+
+    transition:.3s;
+}
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.1);
+}
+
+.content{
+
+    margin-left:240px;
+
+    margin-top:100px;
+
+    margin-bottom:50px;
+
+    width:calc(100% - 240px);
+
+    min-height:calc(100vh - 150px);
+
+}
+
+.footer{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    height:50px;
+
+    background:var(--primary);
+
+    border-top:6px solid var(--accent);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 25px;
+
+    color:white;
+
+    z-index:1000;
+
+    font-size:16px;
+
+    font-weight:600;
 }

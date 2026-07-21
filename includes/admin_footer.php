@@ -1,21 +1,16 @@
-</main>
-
-</div>
-
 <footer class="footer">
 
-© <?= date('Y') ?>
+    <div>
+        © <?= date('Y') ?> The Municipality of Voi
+    </div>
 
-The Municipality of Voi
+    <div>
+        Voi-MMIS v<?= APP_VERSION ?>
+    </div>
 
-Management Information System
+    <div>
+        <i class="fas fa-code"></i>
+        Mboe Alex Mwashamba
+    </div>
 
 </footer>
-
-<script src="<?= BASE_URL ?>assets/js/admin.js"></script>
-
-</div>
-
-</body>
-
-</html>

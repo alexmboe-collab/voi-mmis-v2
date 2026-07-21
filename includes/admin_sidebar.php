@@ -9,6 +9,7 @@
 <aside class="sidebar">
 
     <div class="sidebar-title">
+        <i class="fas fa-bars"></i>
         MAIN MENU
     </div>
 

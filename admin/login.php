@@ -199,7 +199,7 @@ href="<?= BASE_URL ?>assets/css/responsive.css?v=<?= APP_VERSION ?>">
 
                     &copy; <?= date('Y') ?>
 
-                    Municipality of Voi
+                    The Municipality of Voi
 
                 </small>
 

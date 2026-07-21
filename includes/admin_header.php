@@ -21,10 +21,25 @@ $pageTitle = $pageTitle ?? 'Dashboard';
 href="<?= BASE_URL ?>assets/css/variables.css?v=<?= APP_VERSION ?>">
 
 <link rel="stylesheet"
-href="<?= BASE_URL ?>assets/css/admin.css?v=<?= APP_VERSION ?>">
+href="<?= BASE_URL ?>assets/css/reset.css?v=<?= APP_VERSION ?>">
 
 <link rel="stylesheet"
-href="<?= BASE_URL ?>assets/css/components.css?v=<?= APP_VERSION ?>">
+href="<?= BASE_URL ?>assets/css/layout.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/cards.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/forms.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/tables.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/alerts.css?v=<?= APP_VERSION ?>">
+
+<link rel="stylesheet"
+href="<?= BASE_URL ?>assets/css/utilities.css?v=<?= APP_VERSION ?>">
 
 <link rel="stylesheet"
 href="<?= BASE_URL ?>assets/css/dashboard.css?v=<?= APP_VERSION ?>">

@@ -116,6 +116,22 @@ class UserModel extends BaseModel
     }
 
     /**
+    * Find User or Fail
+    */
+    public function findOrFail(int $id): array
+    {
+        $user = $this->find($id);
+
+        if ($user === null) {
+
+            die('User not found.');
+
+        }
+
+        return $user;
+    }
+
+    /**
     * Check whether a username already exists
     * (optionally excluding a given user id, e.g. when editing)
     */

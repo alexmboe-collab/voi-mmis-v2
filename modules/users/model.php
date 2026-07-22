@@ -276,4 +276,23 @@ class UserModel extends BaseModel
 
         );
     }
+
+    /**
+    * Delete User
+    */
+    public function delete(int $id): bool
+    {
+        return $this->execute(
+
+            "DELETE
+            FROM users
+            WHERE id = :id",
+
+            [
+                ':id' => $id
+            ]
+
+        );
+    }
+    
 }

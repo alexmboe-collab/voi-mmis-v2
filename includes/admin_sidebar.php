@@ -26,6 +26,14 @@
                     </a>
                 </li>
 
+                <li>
+
+                    <a href="<?= BASE_URL ?>admin/projects/">
+                        <i class="fas fa-road"></i>
+                        Projects
+                    </a>
+                </li>
+
             <?php endif; ?>
 
             <li>

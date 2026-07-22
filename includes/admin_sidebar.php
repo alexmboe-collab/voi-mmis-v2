@@ -17,7 +17,7 @@
 
         <ul>
 
-            <?php if (hasRole(['ICT_ADMIN'])): ?>
+     <!-- Dashboard -->
 
                 <li>
                     <a href="<?= BASE_URL ?>admin/dashboard.php">
@@ -25,6 +25,10 @@
                         Dashboard
                     </a>
                 </li>
+
+    <!-- ICT Admin Modules -->
+
+            <?php if (hasRole(['ICT_ADMIN'])): ?>
                 
                 <li>
                     <a href="<?= BASE_URL ?>admin/users/index.php">
@@ -41,6 +45,8 @@
                 </li>
 
             <?php endif; ?>
+
+    <!-- Logout -->
 
             <li>
                 <a href="<?= BASE_URL ?>admin/logout.php">

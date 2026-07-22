@@ -107,7 +107,6 @@ class DashboardModel extends BaseModel
         } catch (Exception $e) {
 
             return "Disconnected";
-
         }
     }
 
@@ -128,12 +127,11 @@ class DashboardModel extends BaseModel
     }
 
     /**
-     * Total Projects
-     * (Temporary until projects table exists)
-     */
+    * Total Projects
+    */
     public function totalProjects(): int
     {
-        return 0;
+        return $this->countRows('projects');
     }
 
     /**

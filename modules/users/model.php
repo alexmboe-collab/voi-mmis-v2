@@ -250,4 +250,30 @@ class UserModel extends BaseModel
 
         );
     }
+
+    /**
+    * Reset User Password
+     */
+    public function resetPassword(
+    int $id,
+    string $password
+    ): bool
+    {
+        return $this->execute(
+
+            "UPDATE users
+            SET password = :password
+            WHERE id = :id",
+
+            [
+                ':password' => password_hash(
+                    $password,
+                    PASSWORD_DEFAULT
+                ),
+
+                ':id' => $id
+            ]
+
+        );
+    }
 }

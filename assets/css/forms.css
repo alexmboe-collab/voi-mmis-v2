@@ -136,3 +136,7 @@
     background:#B22222;
 
 }
+
+.full-width{
+    grid-column:1 / -1;
+}

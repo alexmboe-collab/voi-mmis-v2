@@ -14,6 +14,9 @@ require_once
 $projectModel =
 new ProjectModel($pdo);
 
+$projects =
+$projectModel->getAll();
+
 require_once
 '../../includes/admin_header.php';
 
@@ -23,27 +26,103 @@ require_once
 
 <div class="page-title">
 
-    <h2>
+    <h2>Projects</h2>
 
-        Projects
+    <a href="create.php" class="btn btn-success">
 
-    </h2>
+        <i class="fas fa-plus"></i>
+
+        Add Project
+
+    </a>
 
 </div>
 
 <div class="card">
 
-    <p>
+    <div class="table-responsive">
 
-        Total Projects:
+        <table class="table">
 
-        <strong>
+            <thead>
 
-            <?= $projectModel->count(); ?>
+                <tr>
 
-        </strong>
+                    <th>ID</th>
+                    <th>Project Name</th>
+                    <th>Ward</th>
+                    <th>Budget</th>
+                    <th>Status</th>
+                    <th>Actions</th>
 
-    </p>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <?php if (empty($projects)): ?>
+
+                    <tr>
+
+                        <td colspan="6">
+
+                            No projects found.
+
+                        </td>
+
+                    </tr>
+
+                <?php else: ?>
+
+                    <?php foreach ($projects as $project): ?>
+
+                        <tr>
+
+                            <td>
+                                <?= $project['id'] ?>
+                            </td>
+
+                            <td>
+                                <?= e($project['project_name']) ?>
+                            </td>
+
+                            <td>
+                                <?= e($project['ward']) ?>
+                            </td>
+
+                            <td>
+                                KES <?= number_format(
+                                    $project['budget']
+                                ) ?>
+                            </td>
+
+                            <td>
+                                <?= e($project['status']) ?>
+                            </td>
+
+                            <td>
+
+                                <a href="view.php?id=<?= $project['id'] ?>"
+                                   class="btn btn-sm">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    <?php endforeach; ?>
+
+                <?php endif; ?>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>
 

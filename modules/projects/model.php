@@ -29,6 +29,62 @@ class ProjectModel extends BaseModel
     }
 
     /**
+     * Create Project
+     */
+    public function create(array $data): bool
+    {
+        return $this->execute(
+
+            "INSERT INTO projects
+            (
+                project_name,
+                description,
+                ward,
+                location,
+                budget,
+                funding_source,
+                contractor,
+                start_date,
+                end_date,
+                status,
+                progress
+            )
+
+            VALUES
+            (
+                :project_name,
+                :description,
+                :ward,
+                :location,
+                :budget,
+                :funding_source,
+                :contractor,
+                :start_date,
+                :end_date,
+                :status,
+                :progress
+            )",
+
+            [
+
+                ':project_name' => $data['project_name'],
+                ':description' => $data['description'],
+                ':ward' => $data['ward'],
+                ':location' => $data['location'],
+                ':budget' => $data['budget'],
+                ':funding_source' => $data['funding_source'],
+                ':contractor' => $data['contractor'],
+                ':start_date' => $data['start_date'],
+                ':end_date' => $data['end_date'],
+                ':status' => $data['status'],
+                ':progress' => $data['progress']
+
+            ]
+
+        );
+    }
+
+    /**
      * Find Project
      */
     public function find(
